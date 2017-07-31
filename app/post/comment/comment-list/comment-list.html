@@ -1,0 +1,28 @@
+<div class="row">
+  <i class="glyphicon glyphicon-comment"></i>
+   <a ng-click="showComments=!showComments">
+        {{$ctrl.data.comments.length}} comments
+      </a>
+  <div ng-show="showComments" class="col-md-offset-1">
+    <hr>
+    <p ng-repeat="comment in $ctrl.comments">
+
+      <comment data="comment"
+              on-add-comment="$ctrl.addComment(comment)">
+            </comment>
+
+    </p>
+    <form class="form-inline">
+      <div class="form-group">
+        <input ng-model="$ctrl.data.comments" class="form-control">
+      </div>
+      <div class="form-group ">
+        <input ng-click="$ctrl.addComment($ctrl.data)" type="submit" class="btn btn-primary">
+      </div>
+    </form>
+  </div>
+  <comment data="comment"
+          on-add-comment="$ctrl.addComment(comment)">
+        </comment>
+
+</div>

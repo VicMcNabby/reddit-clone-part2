@@ -1,0 +1,26 @@
+<div class="media-left">
+  <img class="media-object" ng-src={{$ctrl.data.image}}>
+  <a ui-sref="postform">EDIT</a>
+</div>
+<div class="media-body">
+  <h4 class="media-heading">
+          {{$ctrl.data.title}}
+          |
+          <a><i ng-click="$ctrl.data.count = $ctrl.data.count + 1" class="glyphicon glyphicon-arrow-up"></i></a>
+          <a><i ng-click="$ctrl.data.count = $ctrl.data.count - 1" class="glyphicon glyphicon-arrow-down"></i></a>
+          {{$ctrl.data.count}}
+        </h4>
+  <div class="text-right authors">
+    <strong><em>{{$ctrl.data.author}}</em></strong>
+  </div>
+  <p>
+    {{$ctrl.data.description}}
+  </p>
+  <div class="form-inline">
+    <time am-time-ago="$ctrl.data.createdAt" title="{{ $ctrl.data.time | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}"></time>|
+    <i class="glyphicon glyphicon-comment"></i>
+          {{post.comments.length}}
+        </a>
+        <comment-list data="comment-list"></comment-list>
+  </div>
+</div>

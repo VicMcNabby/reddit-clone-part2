@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-8">
+
+    <form>
+      <div>
+        <label for="title">Title</label>
+        <input ng-model="$ctrl.newPost.title" id="title" class="form-control">
+      </div>
+      <div>
+        <label for="body">Body</label>
+        <textarea ng-model="$ctrl.newPost.description" id="body" class="form-control"></textarea>
+      </div>
+      <div>
+        <label for="author">Author</label>
+        <input ng-model="$ctrl.newPost.author" id="author" class="form-control">
+      </div>
+      <div>
+        <label for="image-url">Image URL</label>
+        <input ng-model="$ctrl.newPost.image" id="image-url" class="form-control">
+      </div>
+      </br>
+      <div class="form-group">
+        <button ng-click="$ctrl.addPost()" type="button" class="btn btn-primary">
+          Submit
+        </button>
+      </div>
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="pull-right">
+  <button type="button" class="btn btn-info" ui-sref="postform">New Post</button>
+</div>
+
+<ul class="nav nav-pills">
+  <li role="presentation" class="active">
+    <input type="search" ng-model="search" class="form-control input-sm search-form" placeholder="Filter">
+  </li>
+  <div class="form-inline">
+    <label for="sort">  Sort by </label>
+    <select class="form-control" ng-model="sortBy" id="sort">
+        <option disabled selected value="">Choose one</option>
+        <option value="-count">Votes</option>
+        <option value="-createdAt">Date</option>
+        <option value="title">Title</option>
+      </select>
+  </div>
+</ul>
+<div class="well" ng-repeat="post in $ctrl.posts | orderBy:sortBy | filter:search">
+  <post data="post">
+  </post>
+</div>
